@@ -301,7 +301,7 @@ func pollForASG() (instances []virtualMachine, err error) {
 				// by default we use the asg name for the "instance" name.
 				// We will ignore the Name tag
 				Name:             *asg.AutoScalingGroupName,
-				InstanceID:       ASGLabel,
+				InstanceID:       *asg.AutoScalingGroupName,
 				InstanceType:     ASGLabel,
 				Region:           region,
 				ASGInstanceCount: len(asg.Instances),
